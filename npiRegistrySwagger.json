@@ -1,0 +1,259 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters.",
+    "version": "1.0.0",
+    "title": "NPI Lookup",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "blee@smartcommunications.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "paths": {
+    "/api": {
+      "parameters": [
+        {
+          "name": "version",
+          "in": "query",
+          "description": "version",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "first_name",
+          "in": "query",
+          "description": "last_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "last_name",
+          "in": "query",
+          "description": "last_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "city",
+          "in": "query",
+          "description": "last_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "state",
+          "in": "query",
+          "description": "last_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "postal_code",
+          "in": "query",
+          "description": "last_name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Api"
+        ],
+        "responses": {
+          "200": {
+            "description": "An operation",
+            "headers": {
+              "Retry-After": {
+                "type": "integer"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "response": {
+      "type": "object",
+      "properties": {
+        "result_count": {
+          "type": "integer",
+          "format": "int32",
+          "example": "10"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "enumeration_type": {
+                "type": "string",
+                "example": "NPI-1"
+              },
+              "number": {
+                "type": "integer",
+                "format": "int32",
+                "example": "1336116755"
+              },
+              "last_updated_epoch": {
+                "type": "integer",
+                "format": "int32",
+                "example": "1265932800"
+              },
+              "created_epoch": {
+                "type": "integer",
+                "format": "int32",
+                "example": "1141344000"
+              },
+              "basic": {
+                "type": "object",
+                "properties": {
+                  "name_prefix": {
+                    "type": "string",
+                    "example": "DR."
+                  },
+                  "first_name": {
+                    "type": "string",
+                    "example": "MEHMET"
+                  },
+                  "last_name": {
+                    "type": "string",
+                    "example": "TURAN"
+                  },
+                  "middle_name": {
+                    "type": "string",
+                    "example": "ALPARSLAN"
+                  },
+                  "credential": {
+                    "type": "string",
+                    "example": "MD"
+                  },
+                  "sole_proprietor": {
+                    "type": "string",
+                    "example": "NO"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "example": "M"
+                  },
+                  "enumeration_date": {
+                    "type": "string",
+                    "format": "date",
+                    "example": "2006-03-03"
+                  },
+                  "last_updated": {
+                    "type": "string",
+                    "format": "date",
+                    "example": "2010-02-12"
+                  },
+                  "status": {
+                    "type": "string",
+                    "example": "A"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "TURAN MEHMET"
+                  }
+                }
+              },
+              "other_names": {
+                "type": "array",
+                "items": {}
+              },
+              "addresses": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "country_code": {
+                      "type": "string",
+                      "example": "US"
+                    },
+                    "country_name": {
+                      "type": "string",
+                      "example": "United States"
+                    },
+                    "address_purpose": {
+                      "type": "string",
+                      "example": "LOCATION"
+                    },
+                    "address_type": {
+                      "type": "string",
+                      "example": "DOM"
+                    },
+                    "address_1": {
+                      "type": "string",
+                      "example": "9500 EUCLID AVE # P-77"
+                    },
+                    "address_2": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "city": {
+                      "type": "string",
+                      "example": "CLEVELAND"
+                    },
+                    "state": {
+                      "type": "string",
+                      "example": "OH"
+                    },
+                    "postal_code": {
+                      "type": "string",
+                      "example": "441951675"
+                    },
+                    "telephone_number": {
+                      "type": "string",
+                      "example": "502-619-9876"
+                    },
+                    "fax_number": {
+                      "type": "string",
+                      "example": "216-444-6135"
+                    }
+                  }
+                }
+              },
+              "taxonomies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "207L00000X"
+                    },
+                    "desc": {
+                      "type": "string",
+                      "example": "Anesthesiology"
+                    },
+                    "primary": {
+                      "type": "boolean"
+                    },
+                    "state": {
+                      "type": "string",
+                      "example": "OH"
+                    },
+                    "license": {
+                      "type": "string",
+                      "example": "81-000094"
+                    }
+                  }
+                }
+              },
+              "identifiers": {
+                "type": "array",
+                "items": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
