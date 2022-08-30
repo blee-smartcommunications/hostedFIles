@@ -104,12 +104,12 @@
               },
               "last_updated_epoch": {
                 "type": "integer",
-                "format": "int32",
+                "format": "epoch",
                 "example": "1265932800"
               },
               "created_epoch": {
                 "type": "integer",
-                "format": "int32",
+                "format": "epoch",
                 "example": "1141344000"
               },
               "basic": {
